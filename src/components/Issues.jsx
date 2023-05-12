@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import NoIssue from './NoIssue'
 import IssueList from './IssueList';
-import issuelist from './isselist';
+import axios from 'axios'
 
 function Issues() {
-  const [issue, setIssue] = useState(issuelist);
+  const [issue, setissue] = useState([])
   useEffect(() => {
-    console.log(issue);
-  }, [issue])
+    axios.get('https://brisha-backend.vercel.app/getissue')
+      .then((res) => {
+        const data = res.data.output;
+        console.log(data);
+        setissue(data);
+      });
+  }, [issue]);
   
   return (
     <div className='issues'>
       {
-        issue.length === 0 ? <NoIssue /> : <IssueList isu="hello" sisu={setIssue} />
+        issue.length === 0 ? <NoIssue /> : <IssueList isu="hello" sisu={setissue} />
       }
     </div>
   )

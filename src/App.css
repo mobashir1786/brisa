@@ -90,3 +90,26 @@ a {
   cursor: pointer;
   padding: 10px;
 }
+
+.issuecard{
+  height: 100px;
+  width: 90%;
+  border: 2px solid gray;
+  margin: 10px auto;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  align-items: center;
+}
+
+.cardtitle{
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.closeissue{
+  width: 50%;
+  height: 30px;
+  background-color: aquamarine;
+  border-radius: 8px;
+}
