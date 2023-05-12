@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState,useEffect } from 'react'
 import Issuecard from './Issuecard';
+import { Link } from 'react-router-dom';
 
 function IssueList(props) {
   
@@ -24,6 +25,7 @@ function IssueList(props) {
         {
         issue.map((n) => (<Issuecard key={n._id} isuid={n._id} title={n.title} desc={n.desc}/>))
       }
+      <Link to="/createissue">Create new issue</Link>
     </div>
   )
 }
